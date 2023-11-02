@@ -1,1 +1,1 @@
-# lenishkj
+Django web app for movie lovers where you can create your account and add blogs regarding movies and get updates and details of movies
