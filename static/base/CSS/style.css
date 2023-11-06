@@ -3,8 +3,14 @@
 }
 
 .fixed {
-    position: fixed;
-    z-index: 1;
+    position: absolute;
+    z-index: 99;
+    width: auto;
+}
+
+.spaced {
+    padding-top: 110px;
+    margin-top: 110px;
     width: 100%;
 }
 
@@ -205,3 +211,22 @@
 .gradient-custom {   
     background-image: linear-gradient(to bottom right, #5879ee, #000000); 
 }
+
+
+.thumbnail-container {
+    width:1px;
+    height:1px;
+  }
+
+  .header-max{
+    max-height: 10px;
+  }
+
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+    
+  }
+
+  

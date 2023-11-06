@@ -4,7 +4,7 @@
 {% block cover %}
 
 <div class="row cus-bg-letter text-center pt-3 pb-3 g-0 justify-content-center container-fluid">
-    <h1>Welcome to the <br><span class="cus-initial">PARTY</span></h1>
+    <h1>Create <br><span class="cus-initial">NEW</span></h1>
 </div>
 
 {% endblock cover%}
@@ -19,7 +19,7 @@
     <div class="col-10 col-md-8 col-lg-6 col-xl-6">
         <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-                <legend class="text-uppercase text-center mb-5"><span class="foot-initial-mini">L</span>og in to your account</legend>
+                <legend class="text-uppercase text-center mb-5"><span class="foot-initial-mini">W</span>hat's in your mind</legend>
                 <hr>
 
               <form method="post">
@@ -29,16 +29,17 @@
                     {{ form|crispy }}
                 </fieldset>
  
-                  <div class="d-flex justify-content-center">
-                    <button
-                      class="btn btn-success btn-block btn-lg cus-bg-letter text-secondary" type="submit">Sign In</button>
+                <div class="d-flex justify-content-center">
+                  <div class="p-2">
+                      <button
+                    class="btn  btn-block btn-md btn-outline-primary text-dark" type="submit">Post</button>
                   </div>
-                  <div class="ml-4 text-muted">
-                    <small><a class="text-reset text-decoration-none" href="{% url 'password_reset' %}">Forgot Password?</a></small>
+                  <div class="p-2">
+                      <a href="{% url 'blog-home' %}"><button
+                          class="btn btn-block btn-md btn-outline-secondary text-dark"type="button">Cancel</button></a>
                   </div>
-  
-                  <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="{% url 'signup' %}"
-                      class="fw-bold text-info ml-2 text-decoration-none">Sign Up</a></p>
+                </div>
+
               </form>
 
             </div>

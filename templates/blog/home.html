@@ -15,8 +15,10 @@
     {% for post in posts %}
     <div class="row pt-3 pb-2 justify-content-center">
         <div class="card text-center">
-            <div class="card-header">
-              {{ post.author }}
+            <div class="card-header justify-content-center align-middle">
+                <img class="article-img rounded-circle float-start" src="{{ post.author.profile.profile_img.url }}" alt="profile_img">
+                <p class="pt-3">{{ post.author }}</p>
+                
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ post.title }}</h5>

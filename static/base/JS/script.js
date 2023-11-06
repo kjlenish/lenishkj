@@ -6,3 +6,6 @@ $(document).ready(function() {
     });
 });
 
+function refreshPage(){
+    window.location.reload();
+} 

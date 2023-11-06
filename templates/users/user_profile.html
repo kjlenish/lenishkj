@@ -16,46 +16,46 @@
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white"
                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="{{ obj_profile.profile_img.url }}"
-                  alt="Profile-picture" class="img-fluid my-5" onclick="window.open('{{ obj_profile.profile_img.url }}', '_blank')" style="width: 80px;" />
-                <h4>{{ obj_user.first_name }}</h4>
-                <p>{{ obj_user.last_name }}</p>
-                {% if obj_user == user %}
+                <img src="{{ user.profile.profile_img.url }}"
+                  alt="Profile-picture" class="img-fluid my-5" onclick="window.open('{{ user.profile.profile_img.url }}', '_blank')" style="width: 80px;" />
+                <h4>{{ user.first_name }}</h4>
+                <p>{{ user.last_name }}</p>
+                {% block edit_profile %}
                 <a class="text-decoration-none" href="{% url 'profile-update' %}"><i class="bi bi-pencil-square"></i></a>
-                {% endif %}
+                {% endblock edit_profile %}
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
-                    <h6>{{ obj_user.username }}'s profile</h6>
+                    <h6>{{ user.username }}'s profile</h6>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                     <div class="col-6 mb-3">
                       <h6>Email</h6>
-                      <p class="text-muted">{{ obj_user.email }}</p>
+                      <p class="text-muted">{{ user.email }}</p>
                     </div>
                     <div class="col-6 mb-3">
                       <h6>Phone</h6>
-                      {% if obj_profile.phone is null %}
+                      {% if user.profile.phone is null %}
                         <p class="text-muted">Update your phone number </p>
                       {% else %}
-                        <p class="text-muted">{{ obj_profile.country_code }} {{ obj_profile.phone }} </p>
+                        <p class="text-muted">{{ user.profile.country_code }} {{ user.profile.phone }} </p>
                       {% endif %}
                     </div>
                   </div>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
 
-                    {% if obj_profile.dob %}
+                    {% if user.profile.dob %}
                     <div class="col-6 mb-3">
                       <h6>DOB</h6>
-                      <p class="text-muted">{{ obj_profile.dob }}</p>
+                      <p class="text-muted">{{ user.profile.dob }}</p>
                     </div>
                     {% endif %}
 
-                    {% if obj_profile.fav_mov %}
+                    {% if user.profile.fav_mov %}
                     <div class="col-6 mb-3">
                       <h6>Favorite Movie</h6>
-                      <p class="text-muted">{{ obj_profile.fav_mov }}</p>
+                      <p class="text-muted">{{ user.profile.fav_mov }}</p>
                     </div>
                     {% endif %}
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.models import User
 from . forms import UserSignUpForm, UserUpdateForm, ProfileUpdateForm
 
 # Create your views here.
@@ -24,8 +25,15 @@ def signup(request):
 def terms(request):
     return render(request, 'users/terms.html')
 
-def profile(request):
-    return render(request, 'users\profile.html')
+def profile(request, username):
+
+    obj_user = User.objects.get(username=username)
+    obj_profile = obj_user.profile
+    context = {
+        'obj_user' : obj_user,
+        'obj_profile' : obj_profile
+    }
+    return render(request, 'users\profile.html', context)
 
 
 def update_profile(request):

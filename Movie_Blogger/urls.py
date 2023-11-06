@@ -24,12 +24,16 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')),
     path('movie/', include('movie.urls')),
     path('signup/', user_views.signup, name='signup'),
     path('signin/', auth_views.LoginView.as_view(template_name='users/signin.html'), name='signin'),
     path('signout/', auth_views.LogoutView.as_view(template_name='users/signout.html'), name='signout'),
-    path('profile/', user_views.profile, name='profile'),
+    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),
+    path('password-reset-confirm/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
+    path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
+    path('profile/<str:username>/', user_views.profile, name='profile'),
     path('update/', user_views.update_profile, name='profile-update'),
     path('terms/', user_views.terms, name='terms')
 ]
